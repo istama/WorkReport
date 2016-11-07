@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{D554C176-B503-4549-9979-E8344E2EEB88}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <MyType>WindowsForms</MyType>
+    <RootNamespace>WorkReport</RootNamespace>
+    <AssemblyName>WorkReport</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <OptionInfer>On</OptionInfer>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <OptionStrict>Off</OptionStrict>
+    <OptionCompare>Binary</OptionCompare>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Blue\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG=1,TRACE=1</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE=1</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NUnit.Framework">
+      <HintPath>$(SharpDevelopBinPath)\Tools\NUnit\NUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.vb" />
+    <Compile Include="src\DynamicControlGenerator.vb" />
+    <Compile Include="src\ExcelAccessor.vb" />
+    <Compile Include="src\ExcelProperties.vb" />
+    <Compile Include="src\MainFormModel.Designer.vb">
+      <DependentUpon>MainFormModel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\MainFormModel.vb" />
+    <Compile Include="src\StopWatchItemControls.vb" />
+    <Compile Include="src\StopWatchForm.Designer.vb">
+      <DependentUpon>StopWatchForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\StopWatchForm.vb" />
+    <Compile Include="src\StopWatchItemManager.vb" />
+    <Compile Include="src\_StopWatchItemManager.vb" />
+    <Compile Include="src\StopWatchFormModel.Designer.vb">
+      <DependentUpon>StopWatchFormModel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\StopWatchFormModel.vb" />
+    <Compile Include="src\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\LoginForm.vb" />
+    <Compile Include="src\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\MainForm.vb" />
+    <Compile Include="src\Program.vb" />
+    <Compile Include="src\MyProperties.vb" />
+    <Compile Include="src\MyUpdate.vb" />
+    <Compile Include="src\MsgBox.vb" />
+    <Compile Include="src\WorkItemControls.vb" />
+    <Compile Include="src\_WorkItemManager.vb" />
+    <Compile Include="src\WorkItemManager.vb" />
+    <Compile Include="src\_WorkItemStatus.vb" />
+    <Compile Include="test\TestMyUpdate.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Project>{8E3151EE-DB54-4B12-94A2-26EA627B4785}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="src\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\MainForm.resx">
+      <DependentUpon>MainForm.Designer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\MainFormModel.resx">
+      <DependentUpon>MainFormModel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\StopWatchForm.resx">
+      <DependentUpon>StopWatchForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\StopWatchFormModel.resx">
+      <DependentUpon>StopWatchFormModel.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src" />
+    <Folder Include="test" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
